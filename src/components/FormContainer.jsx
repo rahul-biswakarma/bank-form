@@ -11,6 +11,8 @@ const FormContainer = ({
   setBusinessFormStageNo,
   personalFormInformation,
   setPersonalFormInformation,
+  businessFormInformation,
+  setBusinessFormInformation,
 }) => {
   return (
     <div className="overflow-x-hidden overflow-y-auto">
@@ -23,8 +25,10 @@ const FormContainer = ({
         />
       ) : (
         <BusinessForm
-          susinessFormStageNo={businessFormStageNo}
+          businessFormStageNo={businessFormStageNo}
           setBusinessFormStageNo={setBusinessFormStageNo}
+          businessFormInformation={businessFormInformation}
+          setBusinessFormInformation={setBusinessFormInformation}
         />
       )}
     </div>
