@@ -2,6 +2,7 @@
   "name": "bank-form",
   "version": "1.1.0",
   "private": true,
+  "homepage": "http://rahul-biswakarma.github.io/bank-form",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
