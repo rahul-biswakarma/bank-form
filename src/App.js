@@ -15,12 +15,14 @@ const App = () => {
 
   return (
     <div className="bg-[#e0e4e7] w-full h-[100vh] flex ">
-      <div className="w-full max-w-[800px] bg-white rounded-sm p-[3rem_3rem] overflow-auto">
+      <div className="w-full max-w-[800px] bg-white rounded-sm p-[1rem] md:p-[3rem] overflow-auto">
         <UserSettingOption />
         <FormStage
           formType={formType}
           personalFormStageNo={personalFormStageNo}
+          setPersonalFormStageNo={setPersonalFormStageNo}
           businessFormStageNo={businessFormStageNo}
+          setBusinessFormStageNo={setBusinessFormStageNo}
         />
         <FormTypeSelector formType={formType} setFormType={setFormType} />
         <FormContainer

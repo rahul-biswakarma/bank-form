@@ -1,50 +1,90 @@
 import React, { useEffect, useRef } from "react";
 
 const AddressForm = ({
+  setFormFilled,
+  addressFormRef,
+  firstNameRef,
+  lastNameRef,
+  emailRef,
+  mobileNumberRef,
+  ifscCodeRef,
+  accNumberRef,
+  countryNameRef,
+  cityNameRef,
+  postalCodeRef,
+  addressRef,
   personalFormInformation,
   setPersonalFormInformation,
   setPersonalFormStageNo,
 }) => {
-  const countryName = useRef(null);
-  const cityName = useRef(null);
-  const postalCode = useRef(null);
-  const address = useRef(null);
-
   useEffect(() => {
     if (personalFormInformation.countryName)
-      countryName.current.value = personalFormInformation.countryName;
+      countryNameRef.current.value = personalFormInformation.countryName;
     if (personalFormInformation.cityName)
-      cityName.current.value = personalFormInformation.cityName;
+      cityNameRef.current.value = personalFormInformation.cityName;
     if (personalFormInformation.postalCode)
-      postalCode.current.value = personalFormInformation.postalCode;
+      postalCodeRef.current.value = personalFormInformation.postalCode;
     if (personalFormInformation.address)
-      address.current.value = personalFormInformation.address;
+      addressRef.current.value = personalFormInformation.address;
   }, []);
 
   function handleAddressForm(e) {
     e.preventDefault();
-    alert("Form Submitted Successfully");
+
     if (
-      countryName.current.value.trim() === "" ||
-      cityName.current.value.trim() === "" ||
-      postalCode.current.value.trim() === "" ||
-      address.current.value.trim() === ""
+      countryNameRef.current.value.trim() === "" ||
+      cityNameRef.current.value.trim() === "" ||
+      postalCodeRef.current.value.trim() === "" ||
+      addressRef.current.value.trim() === ""
     ) {
       alert("Please fill all the fields");
     } else {
       setPersonalFormInformation({
         ...personalFormInformation,
-        countryName: countryName.current.value,
-        cityName: cityName.current.value,
-        postalCode: postalCode.current.value,
-        address: address.current.value,
+        countryName: countryNameRef.current.value,
+        cityName: cityNameRef.current.value,
+        postalCode: postalCodeRef.current.value,
+        address: addressRef.current.value,
       });
-      setPersonalFormStageNo(3);
     }
+    // Verifing personal form
+    if (
+      firstNameRef.current === null ||
+      lastNameRef.current === null ||
+      emailRef.current === null ||
+      mobileNumberRef.current === null ||
+      firstNameRef.current.value.trim() === "" ||
+      lastNameRef.current.value.trim() === "" ||
+      emailRef.current.value.trim() === "" ||
+      mobileNumberRef.current.value.trim() === ""
+    ) {
+      alert("Please fill all the fields in Personal form");
+      setPersonalFormStageNo(0);
+      return;
+    } else if (mobileNumberRef.current.value.length !== 10) {
+      alert("Please enter a valid mobile number");
+      setPersonalFormStageNo(0);
+      return;
+    }
+
+    // Verifing bank form
+    if (
+      ifscCodeRef === null ||
+      accNumberRef === null ||
+      ifscCodeRef.current.value.trim() === "" ||
+      accNumberRef.current.value.trim() === ""
+    ) {
+      alert("Please fill all the fields in Bank form");
+      setPersonalFormStageNo(1);
+      return;
+    }
+
+    setFormFilled(true);
+    setPersonalFormStageNo(3);
   }
 
   return (
-    <div>
+    <div ref={addressFormRef}>
       <form className="flex flex-col gap-[2rem] w-full">
         <input
           className="form-inputs"
@@ -53,12 +93,12 @@ const AddressForm = ({
           id="country-name"
           placeholder="Country"
           required
-          ref={countryName}
+          ref={countryNameRef}
         />
         <input
           className="form-inputs"
           type="text"
-          ref={cityName}
+          ref={cityNameRef}
           name="city-name"
           id="city-name"
           placeholder="City"
@@ -71,7 +111,7 @@ const AddressForm = ({
           id="postal-code"
           placeholder="Postal Code"
           required
-          ref={postalCode}
+          ref={postalCodeRef}
         />
         <input
           className="form-inputs"
@@ -80,7 +120,7 @@ const AddressForm = ({
           id="address"
           placeholder="Address"
           required
-          ref={address}
+          ref={addressRef}
         />
         <div className="flex gap-[1rem] mt-[1rem]">
           <div

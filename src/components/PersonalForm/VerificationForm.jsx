@@ -1,26 +1,25 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 
 const VerificationForm = ({
+  personalFormRef,
+  firstNameRef,
+  lastNameRef,
+  emailRef,
+  mobileNumberRef,
   personalFormInformation,
   setPersonalFormInformation,
   setPersonalFormStageNo,
 }) => {
-  // Reference
-  const firstName = useRef(null);
-  const lastName = useRef(null);
-  const email = useRef(null);
-  const mobileNumber = useRef(null);
-
-  // OnLoad
+  // OnLoadRef
   useEffect(() => {
     if (personalFormInformation.firstName)
-      firstName.current.value = personalFormInformation.firstName;
+      firstNameRef.current.value = personalFormInformation.firstName;
     if (personalFormInformation.lastName)
-      lastName.current.value = personalFormInformation.lastName;
+      lastNameRef.current.value = personalFormInformation.lastName;
     if (personalFormInformation.email)
-      email.current.value = personalFormInformation.email;
+      emailRef.current.value = personalFormInformation.email;
     if (personalFormInformation.mobileNumber)
-      mobileNumber.current.value = personalFormInformation.mobileNumber;
+      mobileNumberRef.current.value = personalFormInformation.mobileNumber;
   }, []);
 
   // Submit Handler
@@ -28,27 +27,27 @@ const VerificationForm = ({
     e.preventDefault();
 
     if (
-      firstName.current.value.trim() === "" ||
-      lastName.current.value.trim() === "" ||
-      email.current.value.trim() === "" ||
-      mobileNumber.current.value.trim() === ""
+      firstNameRef.current.value.trim() === "" ||
+      lastNameRef.current.value.trim() === "" ||
+      emailRef.current.value.trim() === "" ||
+      mobileNumberRef.current.value.trim() === ""
     ) {
       alert("Please fill all the fields");
-    } else if (mobileNumber.current.value.length !== 10) {
+    } else if (mobileNumberRef.current.value.length !== 10) {
       alert("Please enter a valid mobile number");
     } else {
       setPersonalFormInformation({
         ...personalFormInformation,
-        firstName: firstName.current.value,
-        lastName: lastName.current.value,
-        email: email.current.value,
-        mobileNumber: mobileNumber.current.value,
+        firstName: firstNameRef.current.value,
+        lastName: lastNameRef.current.value,
+        email: emailRef.current.value,
+        mobileNumber: mobileNumberRef.current.value,
       });
       setPersonalFormStageNo(1);
     }
   }
   return (
-    <div>
+    <div ref={personalFormRef}>
       <form action="#" className="flex flex-col gap-[2rem] w-full">
         <input
           className="form-inputs"
@@ -57,7 +56,7 @@ const VerificationForm = ({
           id="first-name"
           placeholder="First Name"
           required
-          ref={firstName}
+          ref={firstNameRef}
         />
         <input
           className="form-inputs"
@@ -66,7 +65,7 @@ const VerificationForm = ({
           id="last-name"
           placeholder="Last Name"
           required
-          ref={lastName}
+          ref={lastNameRef}
         />
         <input
           className="form-inputs"
@@ -75,7 +74,7 @@ const VerificationForm = ({
           id="email"
           placeholder="Email"
           required
-          ref={email}
+          ref={emailRef}
         />
         <input
           className="form-inputs"
@@ -84,7 +83,7 @@ const VerificationForm = ({
           id="mobile-number"
           placeholder="Mobile Number"
           required
-          ref={mobileNumber}
+          ref={mobileNumberRef}
         />
         <button
           onClick={handleVerificationForm}

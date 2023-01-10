@@ -1,11 +1,29 @@
 import React from "react";
 
-const FormStage = ({ formType, personalFormStageNo, businessFormStageNo }) => {
+const FormStage = ({
+  formType,
+  personalFormStageNo,
+  businessFormStageNo,
+  setPersonalFormStageNo,
+  setBusinessFormStageNo,
+}) => {
   var currentStage = formType === 0 ? personalFormStageNo : businessFormStageNo;
+
+  function updateStage(stageNo) {
+    if (formType === 0) {
+      setPersonalFormStageNo(stageNo);
+    } else {
+      setBusinessFormStageNo(stageNo);
+    }
+  }
   return (
     <div className="relative flex flex-col items-center w-[100%] h-[100px]">
       <div className={`flex w-full max-w-[400px] items-center gap-[5px]`}>
+        {/* First Stage */}
         <span
+          onClick={() => {
+            updateStage(0);
+          }}
           className={`${
             currentStage >= 0
               ? "bg-primary text-white"
@@ -21,13 +39,19 @@ const FormStage = ({ formType, personalFormStageNo, businessFormStageNo }) => {
             Personal
           </span>
         </span>
+
         {/* First Line */}
         <span
           className={`${
             currentStage >= 1 ? "bg-primary" : "bg-gray-300"
           } h-[2px] w-full`}
         ></span>
+
+        {/* 2nd Stage */}
         <span
+          onClick={() => {
+            updateStage(1);
+          }}
           className={`${
             currentStage >= 1
               ? "bg-primary text-white"
@@ -43,6 +67,7 @@ const FormStage = ({ formType, personalFormStageNo, businessFormStageNo }) => {
             Bank Details
           </span>
         </span>
+
         {/* Second Line */}
         <span
           className={`${
@@ -50,7 +75,11 @@ const FormStage = ({ formType, personalFormStageNo, businessFormStageNo }) => {
           } h-[2px] w-full`}
         ></span>
 
+        {/* Third Stage */}
         <span
+          onClick={() => {
+            updateStage(2);
+          }}
           className={`${
             currentStage >= 2
               ? "bg-primary text-white"

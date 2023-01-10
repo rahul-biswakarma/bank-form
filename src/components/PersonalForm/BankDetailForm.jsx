@@ -3,6 +3,9 @@ import React, { useState, useEffect, useRef } from "react";
 import currenciesJSON from "../../data/currencies.json";
 
 const BankDetailsForm = ({
+  bankDetailFormRef,
+  ifscCodeRef,
+  accNumberRef,
   personalFormInformation,
   setPersonalFormInformation,
   setPersonalFormStageNo,
@@ -11,34 +14,30 @@ const BankDetailsForm = ({
   const [currencyCollection, setCurrencyCollection] = useState([]);
   const [currentCurreny, setCurrentCurreny] = useState({});
 
-  // References
-  const ifscCode = useRef(null);
-  const accNumber = useRef(null);
-
   // OnLoad
   useEffect(() => {
     setCurrencyCollection(currenciesJSON.currencies);
     setCurrentCurreny(currenciesJSON.currencies[0]);
 
     if (personalFormInformation.ifscCode)
-      ifscCode.current.value = personalFormInformation.ifscCode;
+      ifscCodeRef.current.value = personalFormInformation.ifscCode;
     if (personalFormInformation.accountNumber)
-      accNumber.current.value = personalFormInformation.accountNumber;
+      accNumberRef.current.value = personalFormInformation.accountNumber;
   }, []);
 
   // Submit Handler
   function handleBankForm(e) {
     e.preventDefault();
     if (
-      ifscCode.current.value.trim() === "" ||
-      accNumber.current.value.trim() === ""
+      ifscCodeRef.current.value.trim() === "" ||
+      accNumberRef.current.value.trim() === ""
     ) {
       alert("Please fill all the fields");
     } else {
       setPersonalFormInformation({
         ...personalFormInformation,
-        ifscCode: ifscCode.current.value,
-        accountNumber: accNumber.current.value,
+        ifscCode: ifscCodeRef.current.value,
+        accountNumber: accNumberRef.current.value,
         currency: currentCurreny,
       });
       setPersonalFormStageNo(2);
@@ -46,7 +45,7 @@ const BankDetailsForm = ({
   }
 
   return (
-    <div>
+    <div ref={bankDetailFormRef}>
       <form className="flex flex-col gap-[2rem] w-full">
         <select
           name="country"
@@ -78,7 +77,7 @@ const BankDetailsForm = ({
           id="ifsc-code"
           placeholder="IFSC Code"
           required
-          ref={ifscCode}
+          ref={ifscCodeRef}
         />
         <input
           className="form-inputs"
@@ -87,7 +86,7 @@ const BankDetailsForm = ({
           id="account-number"
           placeholder="Account Number"
           required
-          ref={accNumber}
+          ref={accNumberRef}
         />
         <div className="flex gap-[1rem] mt-[1rem]">
           <button
