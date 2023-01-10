@@ -24,7 +24,12 @@ const App = () => {
           businessFormStageNo={businessFormStageNo}
           setBusinessFormStageNo={setBusinessFormStageNo}
         />
-        <FormTypeSelector formType={formType} setFormType={setFormType} />
+        <FormTypeSelector
+          formType={formType}
+          setFormType={setFormType}
+          setPersonalFormStageNo={setPersonalFormStageNo}
+          setBusinessFormStageNo={setBusinessFormStageNo}
+        />
         <FormContainer
           formType={formType}
           personalFormStageNo={personalFormStageNo}
