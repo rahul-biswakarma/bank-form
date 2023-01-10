@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
 
-function App() {
+import currenciesJSON from "./data/currencies.json";
+import CountrySelector from "./components/CountrySelector";
+
+const App = () => {
+  const [currencies, setCurrencies] = useState([]);
+  const [country, setCountry] = useState({});
+
+  useEffect(() => {
+    setCurrencies(currenciesJSON.currencies);
+    setCountry(currenciesJSON.currencies[0]);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CountrySelector
+        country={country}
+        currencies={currencies}
+        setCountry={setCountry}
+      />
     </div>
   );
-}
+};
 
 export default App;

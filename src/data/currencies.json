@@ -1,0 +1,99 @@
+{
+  "currencies": [
+    {
+      "country": "Inida",
+      "initials": "in",
+      "currency": "Inidan Rupee"
+    },
+    {
+      "country": "USA",
+      "initials": "us",
+      "currency": "US Dollar"
+    },
+    {
+      "country": "UK",
+      "initials": "uk",
+      "currency": "Pound Sterling"
+    },
+    {
+      "country": "Australia",
+      "initials": "au",
+      "currency": "Australian Dollar"
+    },
+    {
+      "country": "Canada",
+      "initials": "ca",
+      "currency": "Canadian Dollar"
+    },
+    {
+      "country": "China",
+      "initials": "cn",
+      "currency": "Chinese Yuan"
+    },
+    {
+      "country": "Japan",
+      "initials": "jp",
+      "currency": "Japanese Yen"
+    },
+    {
+      "country": "Singapore",
+      "initials": "sg",
+      "currency": "Singapore Dollar"
+    },
+    {
+      "country": "Switzerland",
+      "initials": "ch",
+      "currency": "Swiss Franc"
+    },
+    {
+      "country": "South Africa",
+      "initials": "za",
+      "currency": "South African Rand"
+    },
+    {
+      "country": "South Korea",
+      "initials": "kr",
+      "currency": "South Korean Won"
+    },
+    {
+      "country": "Russia",
+      "initials": "ru",
+      "currency": "Russian Ruble"
+    },
+    {
+      "country": "Brazil",
+      "initials": "br",
+      "currency": "Brazilian Real"
+    },
+    {
+      "country": "Mexico",
+      "initials": "mx",
+      "currency": "Mexican Peso"
+    },
+    {
+      "country": "Turkey",
+      "initials": "tr",
+      "currency": "Turkish Lira"
+    },
+    {
+      "country": "Nigeria",
+      "initials": "ng",
+      "currency": "Nigerian Naira"
+    },
+    {
+      "country": "Argentina",
+      "initials": "ar",
+      "currency": "Argentine Peso"
+    },
+    {
+      "country": "Thailand",
+      "initials": "th",
+      "currency": "Thai Baht"
+    },
+    {
+      "country": "Saudi Arabia",
+      "initials": "sa",
+      "currency": "Saudi Riyal"
+    }
+  ]
+}
