@@ -18,7 +18,7 @@ const FormStage = ({
   }
   return (
     <div className="relative flex flex-col items-center w-[100%] h-[100px]">
-      <div className={`flex w-full max-w-[400px] items-center gap-[5px]`}>
+      <div className={`flex w-full max-w-[350px] items-center gap-[5px]`}>
         {/* First Stage */}
         <span
           onClick={() => {
