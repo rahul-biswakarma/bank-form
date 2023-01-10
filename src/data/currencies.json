@@ -1,99 +1,100 @@
 {
   "currencies": [
     {
-      "country": "Inida",
+      "country": "India",
       "initials": "in",
-      "currency": "Inidan Rupee"
+      "currency": "Inidan Rupee",
+      "currencyInitials": "INR"
     },
     {
       "country": "USA",
       "initials": "us",
-      "currency": "US Dollar"
+      "currency": "US Dollar",
+      "currencyInitials": "USD"
     },
     {
       "country": "UK",
       "initials": "uk",
-      "currency": "Pound Sterling"
+      "currency": "Pound Sterling",
+      "currencyInitials": "GBP"
     },
     {
       "country": "Australia",
       "initials": "au",
-      "currency": "Australian Dollar"
+      "currency": "Australian Dollar",
+      "currencyInitials": "AUD"
     },
     {
       "country": "Canada",
       "initials": "ca",
-      "currency": "Canadian Dollar"
+      "currency": "Canadian Dollar",
+      "currencyInitials": "CAD"
     },
     {
       "country": "China",
       "initials": "cn",
-      "currency": "Chinese Yuan"
+      "currency": "Chinese Yuan",
+      "currencyInitials": "CNY"
     },
     {
       "country": "Japan",
       "initials": "jp",
-      "currency": "Japanese Yen"
+      "currency": "Japanese Yen",
+      "currencyInitials": "JPY"
     },
     {
       "country": "Singapore",
       "initials": "sg",
-      "currency": "Singapore Dollar"
-    },
-    {
-      "country": "Switzerland",
-      "initials": "ch",
-      "currency": "Swiss Franc"
-    },
-    {
-      "country": "South Africa",
-      "initials": "za",
-      "currency": "South African Rand"
+      "currency": "Singapore Dollar",
+      "currencyInitials": "SGD"
     },
     {
       "country": "South Korea",
       "initials": "kr",
-      "currency": "South Korean Won"
+      "currency": "South Korean Won",
+      "currencyInitials": "KRW"
     },
     {
-      "country": "Russia",
-      "initials": "ru",
-      "currency": "Russian Ruble"
+      "country": "Switzerland",
+      "initials": "ch",
+      "currency": "Swiss Franc",
+      "currencyInitials": "CHF"
     },
     {
-      "country": "Brazil",
-      "initials": "br",
-      "currency": "Brazilian Real"
+      "country": "Germany",
+      "initials": "de",
+      "currency": "Euro",
+      "currencyInitials": "EUR"
     },
     {
-      "country": "Mexico",
-      "initials": "mx",
-      "currency": "Mexican Peso"
+      "country": "France",
+      "initials": "fr",
+      "currency": "Euro",
+      "currencyInitials": "EUR"
     },
     {
-      "country": "Turkey",
-      "initials": "tr",
-      "currency": "Turkish Lira"
+      "country": "Italy",
+      "initials": "it",
+      "currency": "Euro",
+      "currencyInitials": "EUR"
     },
     {
-      "country": "Nigeria",
-      "initials": "ng",
-      "currency": "Nigerian Naira"
+      "country": "Spain",
+      "initials": "es",
+      "currency": "Euro",
+      "currencyInitials": "EUR"
     },
     {
-      "country": "Argentina",
-      "initials": "ar",
-      "currency": "Argentine Peso"
+      "country": "Netherlands",
+      "initials": "nl",
+      "currency": "Euro",
+      "currencyInitials": "EUR"
     },
     {
-      "country": "Thailand",
-      "initials": "th",
-      "currency": "Thai Baht"
-    },
-    {
-      "country": "Saudi Arabia",
-      "initials": "sa",
-      "currency": "Saudi Riyal"
+      "country": "Belgium",
+      "initials": "be",
+      "currency": "Euro",
+      "currencyInitials": "EUR"
     }
   ]
 }
