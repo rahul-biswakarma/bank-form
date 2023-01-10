@@ -1,6 +1,6 @@
 {
-  "name": "greeting-react-app",
-  "version": "0.1.0",
+  "name": "bank-form",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "tailwindcss": "^3.2.4"
   }
 }
