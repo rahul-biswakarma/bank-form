@@ -80,7 +80,7 @@ const BusinessForm = ({
   }, [businessFormFilled]);
 
   return (
-    <div className="px-[2rem]">
+    <div id="business-form-container" className="px-[2rem]">
       <VerificationForm
         businessFormRef={businessFormRef}
         businessNameRef={businessNameRef}

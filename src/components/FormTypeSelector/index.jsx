@@ -8,9 +8,10 @@ const FormTypeSelector = ({
 }) => {
   function updateFormType(type) {
     setFormType(type);
-    if (type === 0) setPersonalFormStageNo(0);
-    else setBusinessFormStageNo(0);
+    // if (type === 0) setPersonalFormStageNo(0);
+    // else setBusinessFormStageNo(0);
   }
+
   return (
     <div className="w-[100%] flex justify-center mb-[4rem]">
       <div className="w-full flex">

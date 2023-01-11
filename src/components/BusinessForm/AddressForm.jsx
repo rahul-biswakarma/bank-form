@@ -37,6 +37,7 @@ const AddressForm = ({
       addressRef.current.value.trim() === ""
     ) {
       alert("Please fill all the fields");
+      return;
     } else {
       setBusinessFormInformation({
         ...businessFormInformation,

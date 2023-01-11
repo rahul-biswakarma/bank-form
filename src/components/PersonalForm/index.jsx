@@ -82,7 +82,7 @@ const PersonalForm = ({
   }, [formFilled]);
 
   return (
-    <div className="px-[2rem]">
+    <div id="personal-form-container" className="px-[2rem]">
       <VerificationForm
         personalFormRef={personalFormRef}
         firstNameRef={firstNameRef}
