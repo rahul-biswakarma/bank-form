@@ -33,6 +33,9 @@ const BankDetailsForm = ({
       accNumberRef.current.value.trim() === ""
     ) {
       alert("Please fill all the fields");
+    } else if (!/^\d+$/.test(accNumberRef.current.value)) {
+      alert("Account Number can't contain letters");
+      accNumberRef.current.style.borderColor = "red";
     } else {
       setBusinessFormInformation({
         ...businessFormInformation,

@@ -38,6 +38,18 @@ const AddressForm = ({
     ) {
       alert("Please fill all the fields");
       return;
+    } else if (/\d/.test(countryNameRef.current.value)) {
+      alert("Country name can't contain numbers");
+      countryNameRef.current.style.borderColor = "red";
+      return;
+    } else if (/\d/.test(cityNameRef.current.value)) {
+      alert("City name can't contain numbers");
+      cityNameRef.current.style.borderColor = "red";
+      return;
+    } else if (!/^\d+$/.test(postalCodeRef.current.value)) {
+      alert("Postal code can't contain letters");
+      postalCodeRef.current.style.borderColor = "red";
+      return;
     } else {
       setBusinessFormInformation({
         ...businessFormInformation,
@@ -59,7 +71,10 @@ const AddressForm = ({
       alert("Please fill all the fields in Business form");
       setBusinessFormStageNo(0);
       return;
-    } else if (mobileNumberRef.current.value.length !== 10) {
+    } else if (
+      mobileNumberRef.current.value.length !== 10 ||
+      !/^\d+$/.test(mobileNumberRef.current.value)
+    ) {
       alert("Please enter a valid mobile number");
       setBusinessFormStageNo(0);
       return;

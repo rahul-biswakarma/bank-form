@@ -33,7 +33,10 @@ const VerificationForm = ({
       mobileNumberRef.current.value.trim() === ""
     ) {
       alert("Please fill all the fields");
-    } else if (mobileNumberRef.current.value.length !== 10) {
+    } else if (
+      mobileNumberRef.current.value.length !== 10 ||
+      !/^\d+$/.test(mobileNumberRef.current.value)
+    ) {
       alert("Please enter a valid mobile number");
     } else {
       setPersonalFormInformation({
