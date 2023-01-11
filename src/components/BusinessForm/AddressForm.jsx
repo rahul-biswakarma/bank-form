@@ -98,7 +98,7 @@ const AddressForm = ({
 
   return (
     <div ref={addressFormRef}>
-      <form className="flex flex-col gap-[2rem] w-full">
+      <form action="#" className="flex flex-col gap-[2rem] w-full">
         <input
           className="form-inputs"
           type="text"

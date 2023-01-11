@@ -49,7 +49,7 @@ const BankDetailsForm = ({
 
   return (
     <div ref={bankDetailFormRef}>
-      <form className="flex flex-col gap-[2rem] w-full">
+      <form action="#" className="flex flex-col gap-[2rem] w-full">
         <select
           name="country"
           id="country"
@@ -92,14 +92,14 @@ const BankDetailsForm = ({
           ref={accNumberRef}
         />
         <div className="flex gap-[1rem] mt-[1rem]">
-          <button
+          <div
             onClick={() => {
               setBusinessFormStageNo(0);
             }}
             className="border-primary border-[1px] w-max p-[5px_1rem] text-primary hover:bg-primary hover:text-white rounded-sm"
           >
             Previous
-          </button>
+          </div>
           <button
             onClick={handleBankForm}
             className="bg-primary w-max p-[5px_1rem] text-white rounded-sm"
